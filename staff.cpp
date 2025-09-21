@@ -75,6 +75,25 @@ class Staff
 };
 
 
-int main(){
+// Function that verifies if staff is valid in the system.
+int verifystaff(Staff s[], int size)
+{
+	int id;
+	string pw;
+	cout << "\n                                                                        Enter your Staff ID : ";
+	cin >> id;
+	cin.ignore();
+	cout << "\n                                                                        Enter your password : ";
+	getline(cin, pw);
+	cout << endl;
 
+	for (int i = 0; i < size; i++)
+	{
+		if (id == s[i].getID() && pw == s[i].getPassword())
+		{
+			return 1;
+		}
+	}
+
+	return 0;
 }
