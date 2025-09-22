@@ -3,6 +3,7 @@
 
 #include"staff.cpp"
 #include"ui.cpp"
+#include"classRoom.cpp"
 
 using namespace std;
 
