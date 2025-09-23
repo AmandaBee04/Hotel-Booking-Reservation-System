@@ -145,3 +145,208 @@ void get_hotel_room_preferences(Customer &c, Double d[], Presidential p[], Villa
 
     roomBooked(c, d, p, v);
 }
+
+void editRoom(Customer &c, Double d[], Presidential p[], Villa v[]){
+    int choice, roomtype, numNights, numRooms, curRoom;
+    string date;
+    do{
+        editMenu();
+        cout << endl << "                                                                            Enter your choice : ";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            roomBooked(c, d, p, v);
+            editMenu2();
+            cout << endl << "                                                                             Enter your choice : ";
+            cin >> roomtype;
+            switch (roomtype)
+            {
+                case 1:
+                    cout << "\n                                                                   Enter new number of room(s) : ";
+                    cin >> numRooms;
+                    cout << "\n                                                                      Enter number of night(s) : ";
+                    cin >> numNights;
+                    cout << "\n                                                          Enter start check-in date [DD-MM-YY] : ";
+                    cin >> date;
+                    cout << endl;
+                    curRoom = calcD(c, d);
+                    if (curRoom < numRooms){
+                        if (availableD(d) == 0)
+                        {
+                            noRoom();
+                            continue;
+                        }
+                        else if (availableD(d) < numRooms - curRoom)
+                        {
+                            noEnough();
+                            continue;
+                        }
+                        else{
+                            for (int i = 0; i < numRooms - curRoom; ++i){
+                                for (int j = 0; j < 10; ++j)
+                                {
+                                    if (d[j].customer == "")
+                                    {
+                                        d[j].customer = c.ic;
+                                        d[j].nights = numNights;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        continue;
+                    }
+                    else if (curRoom > numRooms){
+                        for (int i = 0; i < curRoom - numRooms; ++i){
+                            for (int j = 0; j < 10; ++j)
+                            {
+                                if (d[j].customer == c.ic)
+                                {
+                                    d[j].reset();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                    
+                case 2:
+                    cout << "\n                                                                   Enter new number of room(s) : ";
+                    cin >> numRooms;
+                    cout << "\n                                                                      Enter number of night(s) : ";
+                    cin >> numNights;
+                    cout << "\n                                                          Enter start check-in date [DD-MM-YY] : ";
+                    cin >> date;
+                    cout << endl;
+                    curRoom = calcP(c, p);
+                    if (curRoom < numRooms){
+                        if (availableP(p) == 0)
+                        {
+                            noRoom();
+                            continue;
+                        }
+                        else if (availableP(p) < numRooms - curRoom)
+                        {
+                            noEnough();
+                            continue;
+                        }
+                        else{
+                            for (int i = 0; i < numRooms - curRoom; ++i){
+                                for (int j = 0; j < 10; ++j)
+                                {
+                                    if (p[j].customer == "")
+                                    {
+                                        p[j].customer = c.ic;
+                                        p[j].nights = numNights;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        continue;
+                    }
+                    else if (curRoom > numRooms){
+                        for (int i = 0; i < curRoom - numRooms; ++i){
+                            for (int j = 0; j < 10; ++j)
+                            {
+                                if (p[j].customer == c.ic)
+                                {
+                                    p[j].reset();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+
+                case 3:
+                    cout << "\n                                                                   Enter new number of room(s) : ";
+                    cin >> numRooms;
+                    cout << "\n                                                                      Enter number of night(s) : ";
+                    cin >> numNights;
+                    cout << "\n                                                          Enter start check-in date [DD-MM-YY] : ";
+                    cin >> date;
+                    cout << endl;
+                    curRoom = calcV(c, v);
+                    if (curRoom < numRooms){
+                        if (availableV(v) == 0)
+                        {
+                            noRoom();
+                            continue;
+                        }
+                        else if (availableV(v) < numRooms - curRoom)
+                        {
+                            noEnough();
+                            continue;
+                        }
+                        else{
+                            for (int i = 0; i < numRooms - curRoom; ++i){
+                                for (int j = 0; j < 10; ++j)
+                                {
+                                    if (v[j].customer == "")
+                                    {
+                                        v[j].customer = c.ic;
+                                        v[j].nights = numNights;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        continue;
+                    }
+                    else if (curRoom > numRooms){
+                        for (int i = 0; i < curRoom - numRooms; ++i){
+                            for (int j = 0; j < 10; ++j)
+                            {
+                                if (v[j].customer == c.ic)
+                                {
+                                    v[j].reset();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+            }
+            break;
+        
+        case 2:
+            roomBooked(c, d, p, v);
+            editMenu2();
+            cout << endl << "                                                                          Enter your choice : ";
+            cin >> roomtype;
+            cout << "\n                                                               Enter new number of night(s) : ";
+            cin >> numNights;
+            switch (roomtype)
+            {
+            case 1:
+                for (int i = 0; i < 10; ++i){
+                    if (d[i].customer == c.ic){
+                        d[i].nights = numNights;
+                    }
+                }
+                break;
+            
+            case 2:
+                for (int i = 0; i < 10; ++i){
+                    if (p[i].customer == c.ic){
+                        p[i].nights = numNights;
+                    }
+                }
+                break;
+            
+            case 3:
+                for (int i = 0; i < 10; ++i){
+                    if (v[i].customer == c.ic){
+                        v[i].nights = numNights;
+                    }
+                }
+                break;
+            }
+            break;
+        case 3:
+            editCustomer(&c, d, p, v);
+            break;
+        }
+    }while (choice != 4);
+}
