@@ -97,3 +97,14 @@ int verifystaff(Staff s[], int size)
 
 	return 0;
 }
+
+//Function to get the total sales of the hotel
+float printTotal(Double d[], Presidential p[], Villa v[]) {
+	int total = 0;
+	for (int i = 0; i < 10; i++) {
+		total += d[i].getPrice() * d[i].getNights();
+		total += p[i].getPrice() * p[i].getNights();
+		total += v[i].getPrice() * v[i].getNights();
+	}
+	return total;
+}
