@@ -350,3 +350,103 @@ void editRoom(Customer &c, Double d[], Presidential p[], Villa v[]){
         }
     }while (choice != 4);
 }
+
+void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]){
+    int choice;
+    string ic;
+    cout << "\n                                                Enter 1 to change IC Number, 2 to change Name : ";
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+        cout << "\n                                                                          Enter new IC Number : ";    
+        cin >> ic;
+        for (int i = 0; i < 10; ++i){
+            if (d[i].customer == c->ic){
+                d[i].customer = ic;
+            }
+            if (p[i].getCustomer() == c->ic){
+                p[i].customer = ic;
+            }
+            if (v[i].getCustomer() == c->ic){
+                v[i].customer = ic;
+            }
+        }
+        c->ic = ic;
+        break;
+    case 2:
+        string name;
+        cout << "\n                                                                               Enter new Name : ";
+        cin.ignore();
+        getline(cin, name);
+        c->name = name;
+        break;
+    }
+}
+
+void roomBooked(Customer &c, Double d[], Presidential p[], Villa v[]){
+
+    cout << "\n\n";
+    cout << "                                                                              ,---.          ,---." << endl;
+    cout << "                                                                             / /\"`\\.--\"\"\"--./,'\"\\ \\" << endl;
+    cout << "                                                                             \\ \\    _       _   / /" << endl;
+    cout << "                                                                              `./  / __   __ \\  \\,'" << endl;
+    cout << "                                                                               /    /_O)_(_O\\    \\" << endl;
+    cout << "                                                                               |  .-'  ___  `-.  |" << endl;
+    cout << "                                                                            .--|       \\_/       |--." << endl;
+    cout << "                                                                          ,'    \\   \\   |   /   /    `." << endl;
+    cout << "                                                                         /       `. `--^--'  ,'       \\" << endl;
+    cout << "                                                                      .-\"\"\"\"\"\"-.    `--.___.--'    .-\"\"\"\"\"\"-." << endl;
+    cout << "                                                      .--------------/         \\------------------/         \\--------------." << endl;
+    cout << "                                                      | .------------\\         /------------------\\         /------------. |" << endl;
+    cout << "                                                      | |             `-`--`--'                    `--'--'-'             | |" << endl;
+    cout << "                                                      | |                    + ===================== +                   | |" << endl;
+    cout << "                                                      | |                    | Rooms that you booked |                   | |" << endl;
+    cout << "                                                      | |                    + ===================== +                   | |" << endl;
+    cout << "                                                      | |                                                                | |" << endl;
+    cout << "                                                      | |                        Double Room : " << calcD(c, d) << "                         | |" << endl;
+    cout << "                                                      | |                                                                | |" << endl;
+    cout << "                                                      | |                  Presidential Room : " << calcP(c, p) << "                         | |" << endl;
+    cout << "                                                      | |                                                                | |" << endl;
+    cout << "                                                      | |                              Villa : " << calcV(c, v) << "                         | |" << endl;
+    cout << "                                                      | |________________________________________________________________| |" << endl;
+    cout << "                                                      |____________________________________________________________________|" << endl;
+    cout << "                                                                            )__________|__|__________(" << endl;
+    cout << "                                                                           |            ||            |" << endl;
+    cout << "                                                                           |____________||____________|" << endl;
+    cout << "                                                                             ),-----.(      ),-----.(  " << endl;
+    cout << "                                                                           ,'   ==.   \\    /  .==    `." << endl;
+    cout << "                                                                          /            )  (            \\" << endl;
+    cout << "                                                                          `==========='    `==========='\n" << endl;
+    cout << endl;
+}
+
+int calcD(Customer &c, Double d[]){
+    int total = 0;
+    for (int i = 0; i < 10; ++i){
+        if (d[i].getCustomer() == c.getIC()){
+            total++;
+        }
+    }
+    return total;
+}
+
+int calcP(Customer &c, Presidential p[]){
+    int total = 0;
+    for (int i = 0; i < 10; ++i){
+        if (p[i].getCustomer() == c.getIC()){
+            total++;
+        }
+    }
+    return total;
+}
+
+int calcV(Customer &c, Villa v[]){
+    int total = 0;
+    for (int i = 0; i < 10; ++i){
+        if (v[i].getCustomer() == c.getIC()){
+            total++;
+        }
+    }
+    return total;
+}
