@@ -64,12 +64,31 @@ class Double
 
 class Presidential : public Double
 {
-    
+    public:
+        Presidential()
+        {
+            price = 25000;
+            customer = "";
+        }
+
+        friend void get_hotel_room_preferences(Customer &c, Double d[], Presidential p[], Villa v[]);
+        friend void editRoom(Customer &c, Double d[], Presidential p[], Villa v[]);
+        friend void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]);
 };
 
 
-
+// This is the class of Villa room, which is the child class of Double.
+// Constructor initializes the price of the room.
 class Villa : public Double
 {
-    
+    public:
+        Villa()
+        {
+            price = 50000;
+            customer = "";
+        }
+
+        friend void get_hotel_room_preferences(Customer &c, Double d[], Presidential p[], Villa v[]);
+        friend void editRoom(Customer &c, Double d[], Presidential p[], Villa v[]);
+        friend void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]);
 };
