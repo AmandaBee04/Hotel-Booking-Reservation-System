@@ -420,3 +420,33 @@ void roomBooked(Customer &c, Double d[], Presidential p[], Villa v[]){
     cout << "                                                                          `==========='    `==========='\n" << endl;
     cout << endl;
 }
+
+int calcD(Customer &c, Double d[]){
+    int total = 0;
+    for (int i = 0; i < 10; ++i){
+        if (d[i].getCustomer() == c.getIC()){
+            total++;
+        }
+    }
+    return total;
+}
+
+int calcP(Customer &c, Presidential p[]){
+    int total = 0;
+    for (int i = 0; i < 10; ++i){
+        if (p[i].getCustomer() == c.getIC()){
+            total++;
+        }
+    }
+    return total;
+}
+
+int calcV(Customer &c, Villa v[]){
+    int total = 0;
+    for (int i = 0; i < 10; ++i){
+        if (v[i].getCustomer() == c.getIC()){
+            total++;
+        }
+    }
+    return total;
+}
