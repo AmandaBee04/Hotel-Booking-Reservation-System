@@ -18,6 +18,10 @@ void roomBookedForReceipt(Customer *c, Double d[], Presidential p[], Villa v[]);
 int checkNightD(Customer *c, Double d[]);
 int checkNightP(Customer *c, Presidential p[]);
 int checkNightV(Customer *c, Villa v[]);
+int totalD(Customer *c, Double d[]);
+int totalP(Customer *c, Presidential p[]);
+int totalV(Customer *c, Villa v[]);
+int totalAmount(Customer *c, Double d[], Presidential p[], Villa v[]);
 
 
 // This is the function to print the receipt. It is broken down into multiple small parts to make it easier to read.
@@ -83,4 +87,36 @@ int checkNightV(Customer *c, Villa v[]){
     }
 
     return numNights;
+}
+
+int totalD(Customer *c, Double d[]){
+    int price =10000;
+    int numRooms = calcD(*c, d);
+    int night2 = checkNightD(c, d);
+
+    return price * numRooms * night2;
+}
+
+int totalP(Customer *c, Presidential p[]){
+    int price =25000;
+    int numRooms = calcP(*c, p);
+    int night2 = checkNightP(c, p);
+
+    return price * numRooms * night2;
+}
+
+int totalV(Customer *c, Villa v[]){
+    int price =50000;
+    int numRooms = calcV(*c, v);
+    int night2 = checkNightV(c, v);
+    
+    return price * numRooms * night2;
+}
+
+int totalAmount(Customer *c, Double d[], Presidential p[], Villa v[]){
+    int result1 = totalD( c, d);
+    int result2 = totalP( c, p);
+    int result3 = totalV( c, v);
+
+    return result1 + result2 + result3;
 }
