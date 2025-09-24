@@ -38,19 +38,69 @@ void print_receipt_func(Customer *c, Double d[], Presidential p[], Villa v[]){
     int month = localTime->tm_mon + 1;
     int day = localTime->tm_mday;
 
-
-    cout << "                                                       Invoice Number : " << invoiceNum << "                                                       " << endl;
-    cout << "                                                      Date           : " << day << "/" << month << "/" << year << "                                                  | " << endl;
-    cout << "                                                       BILL TO        : " << setw(30) << left << c -> getName() << "                              " << endl;
-    cout << "                                                       IC             : " << setw(30) << left << c -> getIC() << "                              " << endl;
-    cout << "                                                                                                                                  " << endl;
-  
-
-
-    cout << "                                                     " << "   Total Payment : RM " << setw(53) << right << totalAmount(c, d, p, v) << "    " << endl;
-
-
+    cout << "                                                      ------------------------------------------------------------------------------  " << endl;
+    cout << "                                                     |               _               ___             _      _      _                | " << endl;
+    cout << "                                                     |              | |             | '_ \\          (_)    (_)    | |               | " << endl;
+    cout << "                                                     |              | |     ___     | |_) |_ __ __ _ _ _ __ _  ___| |               | " << endl;
+    cout << "                                                     |              | |    / _ \\    | ._ /| '__/ _` | | '__| |/ _ \\ |               | " << endl;
+    cout << "                                                     |              | |___|  __/    | |   | | | (_| | | |  | |  __/ |               | " << endl;
+    cout << "                                                     |              |_____|\\___|    |_|   |_|  \\__,_|_|_|  |_|\\___|_|               | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                         Multimedia University Sdn.Bhd                        | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                             Persiaran Multimedia                             | " << endl;
+    cout << "                                                     |                                63100 Cyberjaya                               | " << endl;
+    cout << "                                                     |                                   Selangor.                                  | " << endl;
+    cout << "                                                     |                                 1-300-80-0668                                | " << endl;
+    cout << "                                                     |                                www.mmu.edu.my                                | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |==============================================================================| " << endl;
+    cout << "                                                     |                                    Invoice                                   | " << endl;
+    cout << "                                                     |==============================================================================| " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |  Invoice Number : " << invoiceNum << "                                                      | " << endl;
+    cout << "                                                     |  Date           : " << day << "/" << month << "/" << year << "                                                  | " << endl;
+    cout << "                                                     |  BILL TO        : " << setw(30) << left << c -> getName() << "                             | " << endl;
+    cout << "                                                     |  IC             : " << setw(30) << left << c -> getIC() << "                             | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |==============================================================================| " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                                  DESCRIPTION                                 | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     | ";
+    roomBookedForReceipt(c, d, p, v);
+    cout << "                                                     |------------------------------------------------------------------------------| " << endl;
+    cout << "                                                     |" << "   Total Payment : RM " << setw(53) << right << totalAmount(c, d, p, v) << "   | " << endl;
+    cout << "                                                     |------------------------------------------------------------------------------| " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                     Thanks for choosing our LA PRAIRIEL!                     | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                        We hope you enjoy your holiday!                       | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |      ___       ________  ___      ___ _______           ___  ___             | " << endl;     
+    cout << "                                                     |     |\\  \\     |\\   __  \\|\\  \\    /  /|\\  ___ \\         |\\  \\|\\  \\            | " << endl;   
+    cout << "                                                     |     \\ \\  \\    \\ \\  \\|\\  \\ \\  \\  /  / | \\   __/|        \\ \\  \\ \\  \\           | " << endl;   
+    cout << "                                                     |      \\ \\  \\    \\ \\  \\ \\  \\ \\  \\/  / / \\ \\  \\_|/__       \\ \\  \\ \\  \\          | " << endl;  
+    cout << "                                                     |       \\ \\  \\____\\ \\  \\_\\  \\ \\    / /   \\ \\  \\_|\\ \\       \\ \\  \\_\\  \\         | " << endl; 
+    cout << "                                                     |        \\ \\_______\\ \\_______\\ \\__/ /     \\ \\_______\\       \\ \\_______\\        | " << endl;
+    cout << "                                                     |         \\|_______|\\|_______|\\|__|/       \\|_______|        \\|_______|        | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                      ------------------------------------------------------------------------------  " << endl;
     cout << endl;
+}
+
+void roomBookedForReceipt(Customer *c, Double d[], Presidential p[], Villa v[]){
+    cout <<" Rooms that you've booked                                                    |" << endl;
+    cout << "                                                     |                                                                              | " << endl;
+    cout << "                                                     | " << setw(20) << left << "  Type of rooms" << setw(22) << right << "Number of Room" << setw(16) << right << "Night(s)" << setw(18) << right << "Amount(RM)" << " | " << endl;
+    cout << "                                                     |------------------------------------------------------------------------------| " << endl;
+    cout << "                                                     | " << setw(20) << left << "  Double Room" << left << setw(15) << right << calcD(*c, d) << setw(19) << right << checkNightD(c, d) << setw(20) << right << totalD(c, d) << "   | " << endl;
+    cout << "                                                     | " << setw(20) << left << "  Presidential Room" << left << setw(15) << right <<  calcP(*c, p) << setw(19) << right << checkNightD(c, p) << setw(20) << right << totalP(c, p) << "   | " << endl;
+    cout << "                                                     | " << setw(20) << left << "  Villa" << left << setw(15) << right << calcV(*c, v) << setw(19) << right << checkNightD(c, v) << setw(20) << right << totalV(c, v) << "   | " << endl;
 }
 
 int checkNightD(Customer *c, Double d[]){
