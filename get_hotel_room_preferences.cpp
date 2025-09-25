@@ -450,3 +450,61 @@ int calcV(Customer &c, Villa v[]){
     }
     return total;
 }
+
+void booking_menu(Customer &c, Double d[], Presidential p[], Villa v[])
+{
+    cout << "\n";
+    cout << "                                                                                ______________________________________________________________________________________________   " << endl; 
+    cout << "                                                                               /\\                                                                                             \\" << endl;
+    cout << "                                                                               \\_|                                       + DESCRIPTION +                                       |" << endl;
+    cout << "                                                                                 |  =========================================================================================  | " << endl;
+    cout << "                                                                                 |                                                                                             | " << endl;
+    cout << "                                                                                 |                                       < Double room >                                       | " << endl; 
+    cout << "                                                                                 |                                                                                             | " << endl;
+    cout << "                                                                                 |                             A standard hotel room for a couple.                             | " << endl;
+    cout << "                                                                                 |                          This package includes one king-size bed.                           | " << endl;
+    cout << "                                                                                 |                                                                                             | " << endl;
+    cout << "             __________________________   __________________________             |  -----------------------------------------------------------------------------------------  | " << endl;
+    cout << "         .-/|                          \\ /                          |\\-.         |                                                                                             | " << endl;
+    cout << "         ||||                                                       ||||         |                                    < Presidential Room >                                    | " << endl;
+    cout << "         ||||               < Room booking Systems >                ||||         |                                                                                             | " << endl;
+    cout << "         ||||                                                       ||||         |              A luxurious and exclusive accommodation reserved for VIP guests.               | " << endl;
+    cout << "         ||||        Please choose your preferably room type:       ||||         |          It features two king-size beds, and breakfast is included in this package.         | " << endl;
+    cout << "         ||||                                                       ||||         |                                                                                             | " << endl;
+    cout << "         ||||                                                       ||||         |  -----------------------------------------------------------------------------------------  | " << endl;
+    cout << "         ||||" << setw(28) << left << "     1. Double room " << setw(3) << left << availableD(d) << " room(s) available" << "      ||||         |                                                                                             | " << endl;
+    cout << "         ||||                                                       ||||         |                                          < Villa >                                          | " << endl;
+    cout << "         ||||" << setw(28) << left << "     2. Presidential Room " << setw(3) << left << availableP(p) << " room(s) available" << "      ||||         |                                                                                             | " << endl;
+    cout << "         ||||                                                       ||||         |                                  A necessity, not a luxury.                                 | " << endl;
+    cout << "         ||||" << setw(28) << left << "     3. Villa " << setw(3) << left << availableV(v) << " room(s) available" << "      ||||         |                    Furnished balcony with a sea view, two king-size beds.                   | " << endl;
+    cout << "         ||||                                                       ||||         |                Gordon Ramsay will be your personal chef to serve your meals.                | " << endl;
+    cout << "         ||||__________________________   __________________________||||         |                                                                                             | " << endl;
+    cout << "         ||/===========================\\|/===========================\\||         |   __________________________________________________________________________________________|_" << endl;
+    cout << "          `---------------------------~___~---------------------------''          \\_/___________________________________________________________________________________________/" << endl;
+}
+
+void printThanks()
+{
+    cout << "\n" << endl;
+    cout << "                                            __^__                                                                                   __^__" << endl;
+    cout << "                                           ( ___ )---------------------------------------------------------------------------------( ___ )" << endl;
+    cout << "                                            | / |                                                                                   | \\ |" << endl;
+    cout << "                                            | / |                       Thanks for providing your preferences.                      | \\ |" << endl;
+    cout << "                                            | / |                                                                                   | \\ |" << endl;
+    cout << "                                            | / |     Do you wish to continue or wish to stay to add more preferably room type?     | \\ |" << endl;
+    cout << "                                            |___|                                                                                   |___|" << endl;
+    cout << "                                           (_____)---------------------------------------------------------------------------------(_____)" << endl;
+    cout << "\n";
+
+    return;
+}
+
+void getChoice()
+{
+    cout << "                                                                       ___________________________________" << endl;
+    cout << "                                                                      /                                   \\" << endl;
+    cout << "                                                                     |   1. Stop booking                   |" << endl;
+    cout << "                                                                     |   2. Add more preferably room type  |" << endl;
+    cout << "                                                                      \\___________________________________/\n" << endl;
+    cout << "                                                                              Enter you choice : ";
+}
