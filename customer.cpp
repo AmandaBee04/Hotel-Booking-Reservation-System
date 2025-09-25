@@ -58,6 +58,40 @@ class Customer{
 		friend void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]);
 };
 
+void printList(Customer *head){
+	if (head == NULL)
+	{
+		noCustomer();
+	}
+	
+	while (head->getNext() != NULL){
+		cout << "\n                                                                                       " << head->getName() << endl;
+		head = head->getNext();
+	}
+	cout << "\n                                                                                       " << head->getName() << endl;
+}
+
+void freeList(Customer *head){
+	if (head == NULL)
+	{
+		return;
+	}
+	while(head->getNext() != NULL){
+		Customer *tmp = head;
+		head = head->getNext();
+		delete tmp;
+	}
+	delete head;
+	return;
+}
+
+void checkNull(Customer *head, Customer *n){
+	while(head->getNext() != NULL){
+		head = head->getNext();
+	}
+	head->setNext(n);
+}
+
 void noCustomer()
 {
 	cout << "                                                                     _______________________________________ " << endl;
