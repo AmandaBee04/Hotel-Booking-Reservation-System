@@ -384,6 +384,7 @@ void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]){
     }
 }
 
+
 void roomBooked(Customer &c, Double d[], Presidential p[], Villa v[]){
 
     cout << "\n\n";
@@ -507,4 +508,65 @@ void getChoice()
     cout << "                                                                     |   2. Add more preferably room type  |" << endl;
     cout << "                                                                      \\___________________________________/\n" << endl;
     cout << "                                                                              Enter you choice : ";
+}
+
+void editMenu()
+{
+    cout << "\n" << endl;
+    cout << "                                                                   ===========================================" << endl;
+    cout << "                                                                   |                                         |" << endl;
+    cout << "                                                                   |     < What would you like to edit? >    |" << endl;
+    cout << "                                                                   |                                         |" << endl;
+    cout << "                                                                   |       1.  Edit numbers of room(s)       |" << endl;
+    cout << "                                                                   |                                         |" << endl;
+    cout << "                                                                   |       2.  Edit numbers of night(s)      |" << endl;
+    cout << "                                                                   |                                         |" << endl;
+    cout << "                                                                   |       3.  Edit customer details         |" << endl;
+    cout << "                                                                   |                                         |" << endl;
+    cout << "                                                                   |       4.  Exit                          |" << endl;
+    cout << "                                                                   |                                         |" << endl;
+    cout << "                                                                   ===========================================" << endl;
+}  
+
+void editMenu2()
+{
+    cout << endl;
+    cout << "                                                                   > > > > > > > > > > > > > > > > > > > > > >" << endl;
+    cout << "                                                                   ^                                         ^" << endl;
+    cout << "                                                                   ^     < What would you like to edit? >    ^" << endl;
+    cout << "                                                                   ^                                         ^" << endl;
+    cout << "                                                                   ^       1.  Edit for Double Room          ^" << endl;
+    cout << "                                                                   ^                                         ^" << endl;
+    cout << "                                                                   ^       2.  Edit for Presidential Room    ^" << endl;
+    cout << "                                                                   ^                                         ^" << endl;
+    cout << "                                                                   ^       3.  Edit for Villa                ^" << endl;
+    cout << "                                                                   ^                                         ^" << endl;
+    cout << "                                                                   > > > > > > > > > > > > > > > > > > > > > >" << endl;
+}
+
+void noRoom()
+{
+    cout << endl;
+    cout << "                                                                     _______________________________________ " << endl;
+    cout << "                                                                    !                                       !" << endl;
+    cout << "                                                                    !          No room available!!          !" << endl;
+    cout << "                                                                    !_______________________________________!" << endl;
+}
+
+void noEnough()
+{
+    cout << endl;
+    cout << "                                                                     _______________________________________ " << endl;
+    cout << "                                                                    !                                       !" << endl;
+    cout << "                                                                    !      Not enough room available!!      !" << endl;
+    cout << "                                                                    !_______________________________________!" << endl;
+}
+
+void re_enter()
+{
+	cout << endl;
+	cout << "                                                                     ___________________________________________ " << endl;
+    cout << "                                                                    !                                           !" << endl;
+    cout << "                                                                    !   Invalid input. Please re-enter again.   !" << endl;
+    cout << "                                                                    !___________________________________________!" << endl;
 }

@@ -2,10 +2,12 @@
 #include<iomanip>
 
 #include"classRoom.cpp"
+#include"customer.cpp"
 #include"get_hotel_room_preferences.cpp"
 #include"staff.cpp"
 #include"print_receipt_func.cpp"
 #include"ui.cpp"
+
 
 using namespace std;
 
@@ -21,6 +23,7 @@ int availableD(Double room[]);
 int availableP(Presidential room[]);
 int availableV(Villa room[]);
 
+
 int main(){
 	Customer *head = NULL;
 	int choice;
@@ -29,7 +32,7 @@ int main(){
 	Presidential pRoom[10];
 	Villa vRoom[10];
 	// Initialize the Staff members in the system (3 staffs)
-	Staff s[3] = {Staff("Amanda", 1234, 18, "BOSS", "imBoss"), Staff("Abu", 2345, 35, "Manager", "imManager"), Staff("Ahmad", 3456, 25, "Receptionist", "imReceptionist")};
+	Staff s[3] = {Staff("Madam Ruzanna", 1234, 18, "BOSS", "ilovemadam"), Staff("Abu", 2345, 35, "Manager", "imManager"), Staff("Ahmad", 3456, 25, "Receptionist", "imReceptionist")};
 
 	// Loop to initialize the room number for each room.
 	for (int i = 0; i < 10; ++i)
@@ -125,8 +128,11 @@ int main(){
 		system("cls");
 		print_receipt_func(b, dRoom, pRoom, vRoom);
 
+
+
 	}
 } // End of main function
+
 
 // Function to check how many double rooms are available
 int availableD(Double room[]){
