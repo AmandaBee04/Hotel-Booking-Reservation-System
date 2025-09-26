@@ -92,6 +92,53 @@ void checkNull(Customer *head, Customer *n){
 	head->setNext(n);
 }
 
+void delCus(Customer *head, Customer **head2, Double d[], Presidential p[], Villa v[]){
+	if (head == NULL){
+		noCustomer();
+		return;
+	}
+		string ic;
+		cout << "\n                                     Enter customer IC number that you would like to delete : ";
+		cin >> ic;
+		for(int i = 0; i < 10; i++){
+			if(d[i].getCustomer() == ic){
+				d[i].reset();
+			}
+			if(p[i].getCustomer() == ic){
+				p[i].reset();
+			}
+			if(v[i].getCustomer() == ic){
+				v[i].reset();
+			}
+		}
+		if (head->getIC() == ic){
+			if(head->getNext() == NULL){
+				head->setNext(NULL);
+				delete head;
+				*head2 = NULL;
+				return;
+			}
+			Customer *tmp = head->getNext();
+			delete head;
+			*head2 = tmp;
+			return;
+		}
+		if(head->getNext() == NULL){
+				icNotFound();
+				return;
+			}
+		while(head->getNext()->getIC() != ic){
+			head = head->getNext();
+			if(head->getNext() == NULL){
+				icNotFound();
+				return;
+			}
+		}
+		Customer *tmp = head->getNext();
+		head->setNext(head->getNext()->getNext());
+		delete tmp;
+}
+
 void noCustomer()
 {
 	cout << "                                                                     _______________________________________ " << endl;
