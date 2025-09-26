@@ -139,6 +139,26 @@ void delCus(Customer *head, Customer **head2, Double d[], Presidential p[], Vill
 		delete tmp;
 }
 
+Customer *findCus(Customer *head){
+	if (head == NULL){
+		noCustomer();
+		return NULL;
+	}
+	string ic;
+	cout << "\n                                                                       Enter your IC number : ";
+	getline(cin, ic);
+	while(head->getIC() != ic){
+		head = head->getNext();
+		if(head == NULL){
+			icNotFound();
+			return NULL;
+		}
+	}
+	return head;
+	
+}
+
+
 void noCustomer()
 {
 	cout << "                                                                     _______________________________________ " << endl;
