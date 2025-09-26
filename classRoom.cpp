@@ -1,5 +1,4 @@
-#include <iostream> 
-#include <string>
+#include <iostream>
 using namespace std;
 
 class Customer;
@@ -59,7 +58,10 @@ class Double
             return price;
         }
 
-    
+        friend void get_hotel_room_preferences(Customer &c, Double d[], Presidential p[], Villa v[]);
+        friend void editRoom(Customer &c, Double d[], Presidential p[], Villa v[]);
+        friend void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]);
+        
 };
 
 class Presidential : public Double

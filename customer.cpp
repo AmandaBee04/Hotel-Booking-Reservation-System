@@ -10,6 +10,7 @@ class Double;
 void noCustomer();
 void icNotFound();
 
+// The customer class using linked list method
 class Customer{
 	string ic;
 	string name;
@@ -58,6 +59,7 @@ class Customer{
 		friend void editCustomer(Customer *c, Double d[], Presidential p[], Villa v[]);
 };
 
+// Function to print out the names of the customers in the list
 void printList(Customer *head){
 	if (head == NULL)
 	{
@@ -71,6 +73,7 @@ void printList(Customer *head){
 	cout << "\n                                                                                       " << head->getName() << endl;
 }
 
+// Function to free up the memory
 void freeList(Customer *head){
 	if (head == NULL)
 	{
@@ -85,6 +88,7 @@ void freeList(Customer *head){
 	return;
 }
 
+// Function to check which pointer is free to add the customer in the list
 void checkNull(Customer *head, Customer *n){
 	while(head->getNext() != NULL){
 		head = head->getNext();
@@ -92,6 +96,7 @@ void checkNull(Customer *head, Customer *n){
 	head->setNext(n);
 }
 
+// Function to delete the customer out from the list
 void delCus(Customer *head, Customer **head2, Double d[], Presidential p[], Villa v[]){
 	if (head == NULL){
 		noCustomer();
@@ -137,6 +142,26 @@ void delCus(Customer *head, Customer **head2, Double d[], Presidential p[], Vill
 		Customer *tmp = head->getNext();
 		head->setNext(head->getNext()->getNext());
 		delete tmp;
+}
+
+// This is the function to find the location of the customer in the list stored in the memory.
+Customer *findCus(Customer *head){
+	if (head == NULL){
+		noCustomer();
+		return NULL;
+	}
+	string ic;
+	cout << "\n                                                                       Enter your IC number : ";
+	getline(cin, ic);
+	while(head->getIC() != ic){
+		head = head->getNext();
+		if(head == NULL){
+			icNotFound();
+			return NULL;
+		}
+	}
+	return head;
+	
 }
 
 void noCustomer()

@@ -75,6 +75,7 @@ class Staff
 };
 
 
+
 // Function that verifies if staff is valid in the system.
 int verifystaff(Staff s[], int size)
 {
@@ -86,22 +87,22 @@ int verifystaff(Staff s[], int size)
 	cout << "\n                                                                        Enter your password : ";
 	getline(cin, pw);
 	cout << endl;
-
-	for (int i = 0; i < size; i++)
+	
+	for(int i = 0; i < size; i++)
 	{
-		if (id == s[i].getID() && pw == s[i].getPassword())
+		if(id == s[i].getID() && pw == s[i].getPassword())
 		{
 			return 1;
 		}
 	}
-
+	
 	return 0;
 }
 
 //Function to get the total sales of the hotel
-float printTotal(Double d[], Presidential p[], Villa v[]) {
+float printTotal(Double d[], Presidential p[], Villa v[]){
 	int total = 0;
-	for (int i = 0; i < 10; i++) {
+	for(int i = 0; i < 10; i++){
 		total += d[i].getPrice() * d[i].getNights();
 		total += p[i].getPrice() * p[i].getNights();
 		total += v[i].getPrice() * v[i].getNights();
